@@ -145,7 +145,8 @@ cor(combined_data$Total_Melt, combined_data$Total_Discharge)
 # Visualize correlation
 ggplot(combined_data, aes(x = Total_Melt, y = Total_Discharge)) +
   geom_point() +
-  labs(x = "Total Melt (mm)", y = "Total Discharge (m³/s)", title = "Melt vs. Discharge Correlation")
+  geom_smooth(method = "lm", color = "lightblue", se = FALSE) +  #add linear trend line
+  labs(x = "Total Melt (mm)", y = "Total Discharge (m3/s)", title = "Melt vs. Discharge")
 ```
 ![image](https://github.com/user-attachments/assets/3b814fc5-a12f-46d6-8286-16737e0110c8)
 
