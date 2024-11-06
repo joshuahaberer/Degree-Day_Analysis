@@ -21,7 +21,9 @@ The analysis includes:
 
 The degree-day model used for this project calculates melt as follows:
 
-Melt=DDF×max(Mean Temp,0)
+$$
+\text{Melt} = \text{DDF} \times \max(\text{Mean Temp}, 0)
+$$
 
 Where:
    - Melt = Estimated daily melt (in mm of water equivalent).
