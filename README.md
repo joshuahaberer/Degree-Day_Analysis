@@ -30,6 +30,7 @@ Where:
    - max(Mean Temp, 0) = A threshold function that sets melt to zero when temperatures are below 0°C, assuming no melt occurs.
 
 ## Code
+All code was completed in RStudio
 #### Data Setup
 This section loads the required libraries for this analysis.
 
@@ -107,7 +108,7 @@ degree_day_factor <- 5  # mm/°C/day
 
 # Calculate daily melt and add to dataframe
 climate_data <- climate_data %>%
-  mutate(Daily_Melt = pmax(Mean_Temp, 0) * degree_day_factor)
+  mutate(Daily_Melt = pmax(Mean_Temp, 0) * degree_day_factor) #adjusted equation from Hock (2003)
 ```
 #### Aggregating Data
 This code aggregates daily melt and discharge data to monthly totals for analysis.
@@ -175,5 +176,9 @@ print(kable(table_data, booktabs = TRUE))
 
 ## Results
 The code provided calculates and visualizes seasonal melt patterns and their relationship with discharge. It demonstrates how well the degree-day model estimates seasonal trends but also highlights the limitations for more detailed or spatially specific analysis.
+
+## References
+
+Hock, R. (2003). Temperature index melt modelling in Mountain Areas. Journal of Hydrology, 282(1–4), 104–115. https://doi.org/10.1016/s0022-1694(03)00257-9
 
 
